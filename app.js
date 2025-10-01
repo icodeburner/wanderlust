@@ -79,7 +79,7 @@ async function main() {
 // });
 
 app.get("/", (req, res) => {
-  res.send("Root");
+  res.redirect("/listings");
 });
 
 // session
