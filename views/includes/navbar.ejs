@@ -1,0 +1,39 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3"
+>
+  <div class="container">
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold fs-4 txt" href="/listings">
+      <i class="fa-solid fa-compass me-2"></i>Wanderlust
+    </a>
+
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav links -->
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup">
+      <div class="navbar-nav align-items-lg-center">
+        <!-- <a class="nav-link mx-2 fw-semibold hover-link" href="/">Home</a> -->
+        <a class="nav-link mx-2 fw-semibold hover-link" href="/listings">All Listings</a>
+        <% if (currUser){ %>
+        <a class="btn px-3 ms-lg-3 allBtnColor allBtnColorWithHover" href="/listings/new">+ Create Listing </a>
+        <% } %>
+        <% if (!currUser){ %>
+        <a class="btn allBtnColor allBtnColorWithHover px-3 ms-lg-3" href="http://localhost:8080/signup">Sign Up</a>
+        <% } %>
+        <% if (currUser){ %>
+        <a class="btn allBtnColor allBtnColorWithHover px-3 ms-lg-3" href="http://localhost:8080/logout">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

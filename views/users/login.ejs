@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplates"); %>
+<div class="d-flex justify-content-center mt-5">
+  <div class="signup-card col-6">
+    <h2 class="text-center mb-4">Login to WanderLust</h2>
+    <form action="/login" method="POST">
+      <!-- Username -->
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          placeholder="Enter your username"
+          required
+        />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn allBtnColor w-100 mb-3">Login</button>
+
+      <!-- Extra Links -->
+      <div class="login-link text-center">
+        Don’t have an account?
+        <a href="/signup">Sign Up</a>
+      </div>
+    </form>
+  </div>
+</div>

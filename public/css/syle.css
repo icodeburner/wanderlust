@@ -1,0 +1,209 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+
+/* navbar */
+.navbar {
+  height: 5rem;
+  background-color: #fff;
+}
+
+.hover-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.hover-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: #fe424d;
+  transition: width 0.3s;
+}
+.hover-link:hover::after {
+  width: 100%;
+}
+
+.fa-compass {
+  color: #fe424d;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* footer */
+.f-info-links a {
+  text-decoration: none;
+  color: #222222;
+}
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.f-info {
+  height: 8rem;
+  display: flex;
+  background-color: #ebebeb;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.f-info-links {
+  width: 100%;
+}
+.f-info-socials {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.f-info-socials i {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.footer-link {
+  color: #6c757d;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-link:hover {
+  color: #fe424d;
+  transform: translateX(4px);
+}
+.footer-social {
+  display: inline-block;
+  color: #6c757d;
+  font-size: 1.2rem;
+  margin: 0 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.footer-social:hover {
+  color: #fe424d;
+  transform: scale(1.2);
+}
+input:focus {
+  border-color: #fe424d !important; /* Change border color */
+  box-shadow: 0 0 5px #fe424d !important; /* Optional glow effect */
+}
+
+/* cards */
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.card {
+  padding: 10px;
+  border: none !important;
+}
+.fixed-img {
+  width: 100%;
+  height: 220px; /* You can set 250px, 300px, etc. */
+  object-fit: cover; /* Crops and fills without distortion */
+  border-radius: 10px 10px 10px 10px !important;
+}
+.card-text a,
+span {
+  font-size: 0.85rem;
+}
+.dlt-btn {
+  background-color: #fe424d;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 5px 5px 5px 5px;
+  width: 80px;
+  font-size: 0.85rem;
+  position: relative;
+  opacity: 9;
+  z-index: 1;
+}
+
+/* cardEffect */
+.card-img-overlay {
+  opacity: 0;
+}
+
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #fff;
+}
+
+.allBtnColor {
+  background-color: #fe424d !important;
+  color: #fff !important;
+}
+
+.allBtnColorWithHover:hover {
+  background-color: #fff !important;
+  color: #fe424d !important;
+  border: 1px solid #fe424d !important;
+}
+.txt {
+  color: #fe424d !important;
+}
+
+/* users sign up style */
+/* body {
+  background: linear-gradient(135deg, #6dd5ed, #2193b0);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+}
+.signup-card {
+  background: #ffffffdd;
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  max-width: 400px;
+  width: 100%;
+}
+.signup-card h2 {
+  color: #1f6f8b;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.form-control:focus {
+  border-color: #2193b0;
+  box-shadow: 0 0 0 0.2rem rgba(33, 147, 176, 0.25);
+}
+.btn-gradient {
+  background: linear-gradient(135deg, #2193b0, #6dd5ed);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-gradient:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.login-link {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.login-link a {
+  color: #1f6f8b;
+  font-weight: 600;
+  text-decoration: none;
+}
+.login-link a:hover {
+  text-decoration: underline;
+} */

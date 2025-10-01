@@ -1,0 +1,148 @@
+<% layout("/layouts/boilerplates"); %>
+
+<style>
+  .category-bar {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .category-item {
+    min-width: 90px;
+    flex: 0 0 auto;
+    text-align: center;
+    color: #555;
+  }
+  .category-item i {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .category-item.active {
+    color: #fe424d;
+    font-weight: 600;
+  }
+  .category-item:hover {
+    cursor: pointer;
+    color: #fe424d;
+    transition: all 0.2s ease-in-out;
+  }
+  a{
+    text-decoration: none;
+  }
+</style>
+<body class="bg-light">
+  <div class="container py-5">
+    <!-- Header -->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold txt">Explore</h2>
+      <p class="text-muted">Browse beautiful stays curated just for you</p>
+    </div>
+
+    <!-- Listings Grid -->
+    <div class="row g-4">
+      <div
+        class="d-flex gap-4 category-bar pb-2 border-bottom justify-content-center align-items-center"
+      >
+        <a href="/listings?category=trending">
+          <div class="category-item <%= category === 'trending' ? 'active' : '' %>">
+            <i class="bi bi-fire"></i>
+            <small>Trending</small>
+          </div></a
+        >
+        <a href="/listings?category=rooms"
+          ><div class="category-item <%= category === 'rooms' ? 'active' : '' %>">
+            <i class="bi bi-house-door"></i>
+            <small>Rooms</small>
+          </div></a
+        >
+        <a href="/listings?category=iconic_cities"
+          ><div class="category-item <%= category === 'iconic_cities' ? 'active' : '' %>">
+            <i class="bi bi-buildings"></i>
+            <small>Iconic Cities</small>
+          </div></a
+        >
+        <a href="/listings?category=mountains"
+          ><div class="category-item <%= category === 'mountains' ? 'active' : '' %>">
+            <i class="bi bi-triangle"></i>
+            <small>Mountains</small>
+          </div></a
+        >
+        <a href="/listings?category=castles"
+          ><div class="category-item <%= category === 'castles' ? 'active' : '' %>">
+            <i class="bi bi-bank"></i>
+            <small>Castles</small>
+          </div></a
+        >
+        <a href="/listings?category=amazing_pools"
+          ><div class="category-item <%= category === 'amazing_pools' ? 'active' : '' %>">
+            <i class="bi bi-water"></i>
+            <small>Amazing Pools</small>
+          </div></a
+        >
+        <a href="/listings?category=camping"
+          ><div class="category-item <%= category === 'camping' ? 'active' : '' %>">
+            <i class="bi bi-tree-fill"></i>
+            <small>Camping</small>
+          </div></a
+        >
+        <a href="/listings?category=farms"
+          ><div class="category-item <%= category === 'farms' ? 'active' : '' %>">
+            <i class="bi bi-truck-front"></i>
+            <small>Farms</small>
+          </div></a
+        >
+        <a href="/listings?category=artics"
+          ><div class="category-item <%= category === 'artics' ? 'active' : '' %>">
+            <i class="bi bi-snow"></i>
+            <small>Arctic</small>
+          </div></a
+        >
+      </div>
+      
+      <% for (let listing of allListings) { %>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card shadow-sm border-0 h-100 rounded-4">
+          <a
+            href="/listings/<%= listing.id %>"
+            class="text-decoration-none text-dark"
+          >
+            <div class="position-relative">
+              <img
+                src="<%= listing.image.url %>"
+                class="card-img-top rounded-top-4"
+                alt="<%= listing.title %>"
+                style="height: 220px; object-fit: cover"
+              />
+              <span
+                class="badge position-absolute top-0 start-0 m-2 px-3 py-2 rounded-pill shadow allBtnColor"
+              >
+                <%= listing.location %>
+                <%= listing.category %>
+              </span>
+            </div>
+            <div class="card-body">
+              <h6 class="card-title text-truncate">
+                <small><%= listing.title %></small>
+              </h6>
+              <p class="mb-2 text-muted small">
+                <i class="bi bi-geo-alt-fill text-danger"></i> <%=
+                listing.country %>
+              </p>
+              <p class="fw-semibold mb-0 text-success">
+                ₹<%= listing.price.toLocaleString("en-In"); %>
+                <span class="text-muted">/ night •</span>
+                <span>4.5 Rating</span>
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+</body>
