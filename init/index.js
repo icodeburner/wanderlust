@@ -23,7 +23,7 @@ async function main() {
 const initDB = async () => {
   await Listing.deleteMany();
 
-  const userId = new mongoose.Types.ObjectId("68dcebd2d413ececfb192282");
+  const userId = new mongoose.Types.ObjectId("693ea4569e276d483c2c0af1");
 
   initData.data = initData.data.map((obj) => ({
     ...obj,
