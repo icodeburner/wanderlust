@@ -22,7 +22,14 @@ async function main() {
 
 const initDB = async () => {
   await Listing.deleteMany();
-  initData.data = initData.data.map((obj) => ({...obj, owner: "68d647998d20099e6510fff0"}));
+
+  const userId = new mongoose.Types.ObjectId("68dcebd2d413ececfb192282");
+
+  initData.data = initData.data.map((obj) => ({
+    ...obj,
+    owner: userId,
+  }));
+
   await Listing.insertMany(initData.data);
   console.log("Data was initialised");
 };
